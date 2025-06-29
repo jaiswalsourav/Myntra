@@ -1,6 +1,5 @@
 const Bag = () => {
-    return ( <>
-     <Header/>
+    return ( 
     <main>
       <div className="bag-page">
         <div className="bag-items-container">
@@ -10,8 +9,7 @@ const Bag = () => {
 
       </div>
     </main>
-    <Footer/>
-    </>
+
         
     );
 }

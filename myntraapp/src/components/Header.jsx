@@ -1,3 +1,4 @@
+import { FcLike,FcBriefcase ,FcBusinessman } from "react-icons/fc";
 const Header = () => {  
    return (<>
    <header>
@@ -18,17 +19,17 @@ const Header = () => {
         </div>
         <div className="action_bar">
             <div className="action_container">
-                <span className="material-symbols-outlined action_icon">person</span>
+                <FcBusinessman />
                 <span className="action_name">Profile</span>
             </div>
 
             <div className="action_container">
-                <span className="material-symbols-outlined action_icon">favorite</span>
+                <FcLike />
                 <span className="action_name">Wishlist</span>
             </div>
 
             <a className="action_container" href="pages/bag.html">
-                <span className="material-symbols-outlined action_icon">shopping_bag</span>
+                <FcBriefcase />
                 <span className="action_name">Bag</span>
                 <span className="bag-item-count">0</span>
             </a>
