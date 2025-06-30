@@ -1,4 +1,4 @@
-const items = [
+export const  INITIAL_ITEM = [
     {
         id: '001',
         image: 'images/1.jpg',
@@ -23,7 +23,7 @@ const items = [
         current_price: 1507,
         discount_percentage: 42,
         return_period: 14,
-        delivery_date: '10 Oct 2023',
+        delivery_date: '10 Oct 2023', 
         rating: {
             stars: 4.3,
             count: 24,
