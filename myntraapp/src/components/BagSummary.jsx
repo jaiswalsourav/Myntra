@@ -8,14 +8,14 @@ const BagSummary = () => {
     }
   return (<div className="bag-summary">
         <div className="bag-details-container">
-    <div className="price-header">PRICE DETAILS (${summary.totalItem} Items) </div>
+    <div className="price-header">PRICE DETAILS ({summary.totalItem} Items) </div>
     <div className="price-item">
       <span className="price-item-tag">Total MRP</span>
-      <span className="price-item-value">₹${summary.totalMRP}</span>
+      <span className="price-item-value">₹{summary.totalMRP}</span>
     </div>
     <div className="price-item">
       <span className="price-item-tag">Discount on MRP</span>
-      <span className="price-item-value priceDetail-base-discount">-₹${summary.totalDiscount}</span>
+      <span className="price-item-value priceDetail-base-discount">-₹{summary.totalDiscount}</span>
     </div>
     <div className="price-item">
       <span className="price-item-tag">Convenience Fee</span>
@@ -24,11 +24,11 @@ const BagSummary = () => {
     <hr/>
     <div className="price-footer">
       <span className="price-item-tag">Total Amount</span>
-      <span className="price-item-value">₹${summary.finalPayment}</span>
+      <span className="price-item-value">₹{summary.finalPayment}</span>
     </div>
   </div>
   <button className="btn-place-order">
-    <div className="css-xjhrni">PLACE ORDER</div>
+    <div className="css-xjhrni" onClick={()=> console.log("places order is clicked")}>PLACE ORDER</div>
   </button>
  </div>
   );
