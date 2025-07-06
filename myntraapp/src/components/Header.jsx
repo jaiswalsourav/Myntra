@@ -36,7 +36,7 @@ const Header = () => {
             <Link className="action_container" to="/bag">
                 <FcBriefcase />
                 <span className="action_name">Bag</span>
-                <span className="bag-item-count">0</span>
+                <span className="bag-item-count">{bag.length}</span>
             </Link>
         </div>
         </header>

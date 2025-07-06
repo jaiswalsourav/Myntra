@@ -1,4 +1,21 @@
+import { useDispatch, useSelector} from 'react-redux';
+import { bagActions } from '../store/bagSlice'; 
+import { BiCartAdd } from "react-icons/bi";  
+import { MdDeleteForever } from "react-icons/md"; 
+
 const HomePage = ({item}) => {
+
+  const dispatch= useDispatch();
+  const bagItems = useSelector((store) => store.bag);
+  const elementFound = bagItems.indexOf(item.id)>=0;
+  //console.log(item.id,elementFound);
+
+  const handleAddToBag =() =>
+  { 
+    dispatch(bagActions.addToBag(item.id));
+
+   };
+
   return (
 <div className="item-container">
       <img className="item-image" src={item.image} alt="item image"/>
@@ -12,7 +29,12 @@ const HomePage = ({item}) => {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag" onClick={()=> console.log("add bag is clicked")}>Add to Bag</button>
+     {elementFound ? <button type="button" className="btn btn-add-bag btn-warning">Remove <MdDeleteForever /></button>
+     
+     :
+      <button type="button" className="btn btn-add-bag btn-info" onClick={handleAddToBag}>Add to Bag <BiCartAdd /></button>
+     }
+      
     </div>
   );
 }
