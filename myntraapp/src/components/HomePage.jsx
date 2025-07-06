@@ -7,13 +7,17 @@ const HomePage = ({item}) => {
 
   const dispatch= useDispatch();
   const bagItems = useSelector((store) => store.bag);
-  const elementFound = bagItems.indexOf(item.id)>=0;
-  //console.log(item.id,elementFound);
+  const elementFound = bagItems.indexOf(item.id) >= 0;
+ console.log(item.id,elementFound);
 
   const handleAddToBag =() =>
   { 
     dispatch(bagActions.addToBag(item.id));
 
+   };
+   const handleRemoveToBag =() =>
+   {
+    dispatch(bagActions.removeFromBag(item.id));
    };
 
   return (
@@ -29,10 +33,10 @@ const HomePage = ({item}) => {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-     {elementFound ? <button type="button" className="btn btn-add-bag btn-warning">Remove <MdDeleteForever /></button>
+     {elementFound ? (<button type="button" className="btn btn-add-bag btn-warning" onClick={handleRemoveToBag}>Remove <MdDeleteForever /></button>)
      
      :
-      <button type="button" className="btn btn-add-bag btn-info" onClick={handleAddToBag}>Add to Bag <BiCartAdd /></button>
+      (<button type="button" className="btn btn-add-bag btn-info" onClick={handleAddToBag}>Add to Bag <BiCartAdd /></button>)
      }
       
     </div>

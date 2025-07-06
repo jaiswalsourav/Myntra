@@ -34,11 +34,11 @@ const FetchItem = () => {
            
             
               })
-              .catch((err) => {
+              /*.catch((err) => {
         if (err.name !== "AbortError") {
           console.error("Fetch error:", err);
         }
-      });
+      });*/
               
     return () => {
         controller.abort(); // Cleanup function to abort fetch on unmount

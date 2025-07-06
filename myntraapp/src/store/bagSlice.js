@@ -13,7 +13,7 @@ const bagSlice= createSlice({
              },
         removeFromBag: (state, action) => {
             // console.log("removing items",state, action);
-            return state.filter(item => item.id !== action.payload); // Remove item by id
+            return state.filter(itemId => itemId !== action.payload);; // Remove item by id
         }  
         
     },
