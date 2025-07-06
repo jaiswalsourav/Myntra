@@ -1,21 +1,37 @@
+import { useSelector } from "react-redux";
+
 const BagSummary = () => {
 
-    const summary = {
-        totalItem: 3,
-        totalMRP: 5000,
-        totalDiscount: 1000,
-        finalPayment: 4100
-    }
+
+   const bagItemsIds= useSelector((store)=>store.bag);
+   const items =useSelector((store)=> store.items);
+    const finalItem=items.filter((item)=> 
+    {
+    const indexItem=bagItemsIds.indexOf(item.id);
+    return indexItem >= 0;
+     });
+   let totalItem = bagItemsIds.length;
+   let CONVENIENCE_FEES=99;
+  let totalMRP = 0;
+  let totalDiscount = 0;
+
+  finalItem.forEach(bagItem => {
+    totalMRP += bagItem.original_price;
+    totalDiscount += bagItem.original_price - bagItem.current_price;
+  });
+
+  let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
+  
   return (<div className="bag-summary">
         <div className="bag-details-container">
-    <div className="price-header">PRICE DETAILS ({summary.totalItem} Items) </div>
+    <div className="price-header">PRICE DETAILS ({totalItem} Items) </div>
     <div className="price-item">
       <span className="price-item-tag">Total MRP</span>
-      <span className="price-item-value">₹{summary.totalMRP}</span>
+      <span className="price-item-value">₹{totalMRP}</span>
     </div>
     <div className="price-item">
       <span className="price-item-tag">Discount on MRP</span>
-      <span className="price-item-value priceDetail-base-discount">-₹{summary.totalDiscount}</span>
+      <span className="price-item-value priceDetail-base-discount">-₹{totalDiscount}</span>
     </div>
     <div className="price-item">
       <span className="price-item-tag">Convenience Fee</span>
@@ -24,7 +40,7 @@ const BagSummary = () => {
     <hr/>
     <div className="price-footer">
       <span className="price-item-tag">Total Amount</span>
-      <span className="price-item-value">₹{summary.finalPayment}</span>
+      <span className="price-item-value">₹{finalPayment}</span>
     </div>
   </div>
   <button className="btn-place-order">
