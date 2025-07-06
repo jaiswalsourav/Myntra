@@ -1,6 +1,10 @@
 import { FcLike,FcBriefcase ,FcBusinessman } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {  
+
+      const bag=    useSelector((store) => store.bag);
+        console.log("bag items", bag);
    return (<>
    <header>
             <div className="logo_container">

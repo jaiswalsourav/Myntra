@@ -7,6 +7,7 @@ import Bag from './routes/Bag.jsx'// Assuming you have a Bag component
 import Home from './routes/Home.jsx'
 import {Provider} from 'react-redux' // Assuming you have a BagPage component
 import myntraStore from './store/index.js'
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 const router = createBrowserRouter([
   {

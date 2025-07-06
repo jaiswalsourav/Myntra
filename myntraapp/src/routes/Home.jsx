@@ -3,13 +3,15 @@ import HomePage from "../components/HomePage";
 
 
 const Home = () => {
- const items= useSelector((state) => state.items);
- //console.log(items);
-  return ( <main>
+ const items= useSelector((store) => store.items);
+ console.log("got items" ,items);
+  return ( 
           <div className="items-container">
-             {items.map((item) =>(<HomePage key={item.id} item={item}/>))}
+              
+         { items.map((item) => <HomePage key={item.id} item={item} />)}
+
           </div>
-      </main>
+     
     
   );
 }
