@@ -14,15 +14,15 @@ const fetchStatusSlice= createSlice({
         reducers: {
     markFetchingStarted: (state) => {
       state.currentlyFetching = true;
-      //state.fetchDone = false;
+      state.fetchDone = false;
     },
     markFetchingDone: (state) => {
-      state.currentlyFetching = true;
-     // state.fetchDone = true;
+      state.currentlyFetching =false;
+      state.fetchDone = true;
     },
     markFetchingFinished: (state) => {
       state.currentlyFetching = false;
-      //state.fetchDone = true;
+      state.fetchDone = true;
     }  
         
     },

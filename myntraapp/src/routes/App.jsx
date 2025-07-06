@@ -13,12 +13,13 @@ import { Outlet } from "react-router-dom"
        
 function App() {
  const fetchStatus=  useSelector((store) => store.fetchStatus);
+ console.log("fetchstaus",fetchStatus.fetchDone);
   
   return (
     <>
     <Header />
     <FetchItem/>
-    {fetchStatus.fetchDone ? <LoadingSign/> : <Outlet />}
+    {fetchStatus.fetchDone ? <Outlet /> : <LoadingSign/>}
     <Footer />
     </>
   )
