@@ -28,7 +28,7 @@ const BagSummary = () => {
     </div>
   </div>
   <button className="btn-place-order">
-    <div className="css-xjhrni" onClick={()=> console.log("places order is clicked")}>PLACE ORDER</div>
+    <div className="css-xjhrni" onClick={()=> console.log("places order is")}>PLACE ORDER</div>
   </button>
  </div>
   );

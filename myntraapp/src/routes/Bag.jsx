@@ -1,22 +1,21 @@
+import { useSelector } from 'react-redux';
 import BagItem from '../components/BagItem';
 import BagSummary from '../components/BagSummary';
 const Bag = () => {
-const item = {
-  id: 1,
-  company: "Nike",
-  item_name: "Air Max 270",
-  image: "images/1.jpg",  
-  current_price: 8999,
-  original_price: 10999,
-  discount_percentage: 18,
-  return_period: 30,
-  delivery_date: "2-3 days"
-};
+  
+  const bagItem= useSelector((store)=> store.bag);
+  const items =useSelector((store)=> store.items);
+
+  const finalItem=items.filter((item)=> 
+  {
+    const indexItem=bagItem.indexOf(item.id);
+    return indexItem >= 0;
+  });
     return ( 
     <main>
       <div className="bag-page">
         <div className="bag-items-container">
-        <BagItem item={item}/>
+          {finalItem.map(item=><BagItem item={item}/>)}
         </div>
         <BagSummary />
       </div>
