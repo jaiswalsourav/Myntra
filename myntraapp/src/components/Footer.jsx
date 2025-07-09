@@ -36,6 +36,34 @@ const Footer = () => {
         <a href="#">Get it on Google Play</a>
         <a href="#">Myntra for Business</a>
       </div>
+      <div className="desktop-promises">
+  <div className="desktop-section">
+    <div className="desktop-original">
+      <img
+        src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png"
+        alt="100% Original"
+        style={{ width: '48px', height: '40px' }}
+      />
+    </div>
+    <div>
+      <strong>100% ORIGINAL</strong> guarantee for all products at myntra.com
+    </div>
+  </div>
+
+  <div className="desktop-section">
+    <div className="desktop-return">
+      <img
+        src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png"
+        alt="Return within 14 days"
+        style={{ width: '48px', height: '49px' }}
+      />
+    </div>
+    <div>
+      <strong>Return within 14 days</strong> of receiving your order
+    </div>
+  </div>
+</div>
+
     </div>
     </div>       
 <hr/>

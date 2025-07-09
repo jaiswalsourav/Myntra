@@ -1,4 +1,5 @@
 import { FcLike,FcBriefcase ,FcBusinessman } from "react-icons/fc";
+import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {  
@@ -19,7 +20,7 @@ const Header = () => {
             <a href="#">Studio <sup>New</sup></a>
         </nav>
         <div className="search_bar">
-            <span className="material-symbols-outlined search_icon">search</span>
+            <span className="material-symbols-outlined search_icon"><CiSearch /></span>
             <input className="search_input" placeholder="Search for products, brands and more"/>
         </div>
         <div className="action_bar">
