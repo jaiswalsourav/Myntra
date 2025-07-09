@@ -5,6 +5,7 @@ import App from './routes/App.jsx' // Assuming you have an App component
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Bag from './routes/Bag.jsx'// Assuming you have a Bag component 
 import Home from './routes/Home.jsx'
+import Profile from './routes/Profile.jsx'
 import {Provider} from 'react-redux' // Assuming you have a BagPage component
 import myntraStore from './store/index.js'
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {path: '/', element: <Home /> }, // Define the root route
-      { path: '/bag', element: <Bag /> }, // Define the BagPage route
+      { path: '/bag', element: <Bag /> },
+      { path: '/profile', element: <Profile /> }, // Define the BagPage route
   ],
 },
    // Assuming you have a BagPage component

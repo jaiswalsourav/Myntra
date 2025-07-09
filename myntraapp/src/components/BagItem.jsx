@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { bagActions } from '../store/bagSlice'; 
-
+import { MdDeleteForever } from "react-icons/md";
 const BagItem =({item}) => {
 
    const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const BagItem =({item}) => {
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={handleRemoveItem}>X</div>
+    <div className="remove-from-cart" onClick={handleRemoveItem}><MdDeleteForever /></div>
   </div>);
 }
 

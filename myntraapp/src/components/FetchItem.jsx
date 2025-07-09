@@ -24,8 +24,8 @@ const FetchItem = () => {
    fetch("http://localhost:8080/items",{signal})
           .then(res => res.json())
           .then((data) => {
-    const itemsArray = data.items[0]; // ✅ extract the inner array
-    dispatch(itemActions.addInitialItem(itemsArray));
+        const itemsArray = data.items[0]; // ✅ extract the inner array
+       dispatch(itemActions.addInitialItem(itemsArray));
             
           dispatch(fetchStatusActions.markFetchingDone());
            dispatch(fetchStatusActions.markFetchingFinished());

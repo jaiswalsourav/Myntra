@@ -23,10 +23,10 @@ const Header = () => {
             <input className="search_input" placeholder="Search for products, brands and more"/>
         </div>
         <div className="action_bar">
-            <div className="action_container">
+            <Link className="action_container" to="/profile">
                 <FcBusinessman />
                 <span className="action_name">Profile</span>
-            </div>
+            </Link>
 
             <div className="action_container">
                 <FcLike />
